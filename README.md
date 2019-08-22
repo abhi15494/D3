@@ -21,13 +21,13 @@
 
 Before you start data visualization, we need to know about some answers.
 
-  
-
 - Who is the audience?
 
 - What do they need to know?
 
 - What do they need to do with data?
+
+Link:- [vizwiz](http://www.vizwiz.com/2013/01/alberto-cairo-three-steps-to-become.html)
 
   
 
@@ -59,6 +59,23 @@ You can only choose an appropriate visual after understanding who your audience 
 
 > Note: Some of most popular data visualizations always tell a story.
 
+Link:: [ThinkWithGoogle](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/tell-meaningful-stories-with-data/)
+
+## What is D3?
+
+> D3 stands for **Data Driven Documents**
+
+- Helps close the gap between the data and the visaulization on the web.
+
+- Can help calculate size, shape and color.
+
   
 
-Study material:- [vizwiz](https://www.vizwiz.com)
+### Data Visualization are made up of 2 parts
+|Data| Document  |
+|--|--|
+| Json, CSV, Plain text, etc | HTML Web Page |
+| Data should drive the visaulization not the other way around. | Repersents the data. The visual will depend on the data itself and not dictate what the data should be |
+
+> **Example** if your visual has extra space or room, then the document shouldn't change or add data. Instead the visual itself need to be adjusted, NOT THE DATA. 
+
