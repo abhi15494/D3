@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            transition: all 0.3s;
+            overflow: visible;
+        }
+
+        svg {
+            border: 0.1rem solid #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="500" height="500" id="svgbox" stroke-width="5">
+        <!-- 
+            <rect x="0" y="0" width="100" height="100" fill="teal" style="" />
+            
+            <rect x="100" y="100" width="100" height="100" fill="teal" style="" />
+
+            <circle cx="100" cy="100" r="50" style="" />
+
+            <ellipse cx="400" cy="100" rx="100" ry="50" style=""/>
+        
+            <line x1="0" y1="0"
+                x2="500" y2="500"
+                stroke="green"
+                stroke-width="5"/>
+
+            <polygon points="0,480 100,400 200,440 300,470" strokeWidth="3"/>
+
+            <polyline points="0,500 100,400 200,440 300,470 400,380 500,500" fill="none" stroke="#333" stroke-width="1" style=""/>
+        -->
+        <!-- PATH -->
+        <!-- 
+            <path d="
+                M 0,0
+                L 100,0
+                L 100, 200
+                L 200, 200
+                Z
+                M 250, 200
+                L 275, 300
+                L 300, 200
+                Q 400, 400 500, 300
+                Z
+            " fill="none" stroke="#aaa" stroke-width="2" /> 
+        -->
+
+        <!-- TEXT -->
+        <!-- 
+            <a xlink:href="https://www.example.com" target="_blank">
+                <text x="50"  y="50" fill="red" style="font-size:30px">MYTEXT</text>
+                <text x="50"  y="100" fill="red" style="font-size:30px">MYTEXT</text>
+                <text x="50"  y="150" fill="red" style="font-size:30px">MYTEXT</text>
+            </a> 
+        -->
+
+        <!-- DEFINATIONS, GROUPS and MARKERS -->
+        <!-- DISPLAY will not display untill it's defined -->
+        <!-- This rect will be reused as much as possible -->
+        <!-- X and Y value will added the use shapes -->
+        <!-- <defs>
+            <g id="svggroup-1">
+                <rect id="svgrect" x="0" y="0" width="50" height="50" style=""/>
+                <circle cx="70" cy="70" r="25" fill="teal" style=""/>
+            </g>
+        </defs>
+        <use xlink:href="#svgrect" x="0" y="0" />
+        <use xlink:href="#svgrect" x="50" y="50" />
+        <use xlink:href="#svggroup-1" x="300" y="300" />
+        <use xlink:href="#svggroup-1" x="200" y="300" />
+        <use xlink:href="#svggroup-1" x="100" y="300" /> -->
+
+        <!-- TEXT PATH -->
+        <!-- <defs>
+            <path
+                id="svgpath" 
+                d="M0, 0 Q100, 200  350, 50"
+                 fill="" stroke="" stroke-width="" />
+        </defs>
+        <text x="100" y="100" font-size="20">
+            <textPath xlink:href="#svgpath">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.            
+            </textPath>
+        </text> -->
+
+        <!-- CLIP PATHS -->
+        <defs>
+            <clipPath id="svgclip">
+                <rect x="100" y="270" width="200" height="200" style="fill: teal;"/>
+                <circle cx="50" cy="150" r="100" style=""/>
+            </clipPath>
+        </defs>
+        <!-- CLIP PATHS VISUALIZATION -->
+        <circle cx="250" cy="250" r="200" stroke="black" stroke-width="5" style="fill: none;"/>
+        <rect x="100" y="270" width="200" height="200" stroke="pink" stroke-width="5" style="fill: teal;"/>
+        <circle cx="50" cy="150" r="100" style="fill: purple"/>
+        <circle cx="250" cy="250" clip-path="url(#svgclip)" r="200" stroke="red" stroke-width="5" style="fill: blue;"/>
+        
+    </svg>
+    <script>
+        const $svg = document.querySelector('#svgbox');
+        let angle = 0;
+        Array.from($svg.children).forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.target.style.fill = 'transparent';
+                e.target.style.stroke = 'teal';
+                e.target.style.strokeWidth = 3;
+                e.target.attributes.x = e.offsetX + 100;
+                e.target.attributes.y = e.offsetY + 100;
+            });
+        });        
+    </script>
+</body>
+
+</html>

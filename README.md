@@ -80,10 +80,6 @@ Link:: [ThinkWithGoogle](https://www.thinkwithgoogle.com/marketing-resources/dat
 > **Example** if your visual has extra space or room, then the document shouldn't change or add data. Instead the visual itself need to be adjusted, NOT THE DATA. 
 
 ## The Process
-
-```mermaid
-graph LR
-A[Create Data] --> B[Create Functions] 
-B --> C[Begain Data Visaulization] 
-C --> D[Add Interactivity]
+```
+Create Data --> Create Functions --> Begain Data Visaulization --> Add Interactivity
 ```
